@@ -13,3 +13,54 @@ function sendNotification(givenEmail){
         return console.log("Invalid Email");
     }
 }
+
+//Task 3
+
+function checkDigitsInName(name){
+    if(typeof(name)==="string"){
+        let storingNaNoutput=new Array();
+        for(let n of name){
+            storingNaNoutput.push(isNaN(n));
+        }
+
+        if(storingNaNoutput.includes(false)){
+            return console.log(true)
+        }
+        else{
+            return console.log(false)
+        }
+    }
+    else{
+        return console.log("Invalid Input");
+    }
+}
+
+//Task 4
+
+function calculateFinalScore(profileDetails){
+    if(typeof(profileDetails)==="object"){
+        let name=profileDetails.name;
+        let score=profileDetails.testScore;
+        let grade=profileDetails.schoolGrade;
+        let father=profileDetails.isFFamily;
+        if(typeof(name)==="string" && score<=50 && typeof(score)==="number" && grade<=30 && typeof(score)==="number" && typeof(father)==="boolean"){
+            let finalScore=score+grade;
+            if(father===true){
+                finalScore=finalScore+20;
+            }
+            if(finalScore>=80){
+                return console.log(true)
+            }
+            else{
+                return console.log(false)
+            }
+        }
+        else{
+            return console.log("Invalid Input");
+        }
+    }
+    else{
+        return console.log("Invalid Input");
+    }
+
+}
