@@ -1,3 +1,13 @@
+//Task 1
+function calculateTax(income, expenses){
+    if(income>=0 && expenses>=0 && income>=expenses){
+        let tax=(income-expenses)*(20/100);
+        return console.log(tax);
+    }
+    else{
+        return console.log("Invalid Input");
+    }
+}
 
 //-----------------------------------------------------Task 2
 function sendNotification(givenEmail){
