@@ -1,6 +1,5 @@
 
-//Task 2
-
+//-----------------------------------------------------Task 2
 function sendNotification(givenEmail){
     if(givenEmail.includes('@')===true){
         let atTheRateIndex=givenEmail.indexOf('@');
@@ -14,8 +13,7 @@ function sendNotification(givenEmail){
     }
 }
 
-//Task 3
-
+//-----------------------------------------------------Task 3
 function checkDigitsInName(name){
     if(typeof(name)==="string"){
         let storingNaNoutput=new Array();
@@ -35,8 +33,7 @@ function checkDigitsInName(name){
     }
 }
 
-//Task 4
-
+//-----------------------------------------------------Task 4
 function calculateFinalScore(profileDetails){
     if(typeof(profileDetails)==="object"){
         let name=profileDetails.name;
@@ -64,3 +61,29 @@ function calculateFinalScore(profileDetails){
     }
 
 }
+
+//--------------------------------------------------------Task 5
+function waitingTime(waitingTimesArr,serialNumber){
+    if(typeof(serialNumber)==="number" && Array.isArray(waitingTimesArr)===true){
+        let sum=0;
+        let givenSerial=waitingTimesArr.length;
+        if(givenSerial<serialNumber){
+            for(let t of waitingTimesArr){
+                sum+=t;
+            }
+            let avgTime=Math.round(sum/givenSerial);
+            let remainSerial=serialNumber-givenSerial-1;
+            let timeNeed=avgTime*remainSerial;
+
+            return console.log(timeNeed);
+        }
+        else{
+            return console.log("Invalid Input")
+        }
+    }
+    else{
+        return console.log("Invalid Input")
+    }
+}
+
+
